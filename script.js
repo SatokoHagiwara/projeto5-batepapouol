@@ -175,3 +175,17 @@ function listParticipants(response) {
                 </li>`;
   }
 }
+function selectParticipant(element) {
+  const participantSelected = document.querySelector(".participant.selected");
+  participantName = element.querySelector(".personName").innerHTML;
+  const checkElement = element.querySelector(".check");
+
+  if (participantSelected !== null) {
+    participantSelected.classList.remove("selected");
+    checkElement.classList.remove("show");
+  }
+  element.classList.toggle("selected");
+  checkElement.classList.toggle("show");
+
+  changeInput();
+}
