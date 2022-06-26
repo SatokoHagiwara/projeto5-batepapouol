@@ -1,0 +1,229 @@
+.send-message button,
+.message-text,
+.login-screen input,
+.btn-login {
+  all: unset;  
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  position: relative;
+  width: 375px;
+}
+header {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 375px;
+}
+header img {
+  width: 75px;
+}
+header ion-icon {
+  height: 45px;
+  width: 45px;
+}
+.login-screen {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 94px;
+  height: 667px;
+  padding-top: 72px;
+  position: absolute;
+  top: 0;
+  transition: ease-in-out;
+  width: 375px;
+  z-index: 3;
+}
+.login-screen img,
+.loading img {
+  height: 92px;
+  width: 130px;
+}
+.login-screen input {
+  border-radius: 4px;
+  border: 1px solid #d7d7d7;
+  height: 54px;
+  text-align: center;
+  width: 261px;
+}
+.login-screen div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.btn-login {
+  background-color: #e7e7e7;
+  border-radius: 9px;
+  color: #696969;
+  cursor: pointer;
+  height: 45px;
+  text-align: center;
+  width: 109px;
+}
+main {
+  background-color: #f3f3f3;
+  height: 507px;
+  overflow-y: scroll;
+  overflow: hidden;
+  width: 375px;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+.messages li {
+  margin-bottom: 4px;
+  padding: 8px 8px;
+  width: 375px;
+}
+p {
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+}
+.time {
+  color: #aaaaaa;
+}
+.bold {
+  font-weight: 700;
+}
+.status {
+  background-color: #dcdcdc;
+}
+.message {
+  background-color: #ffffff;
+}
+.private-message {
+  background-color: #ffdede;
+}
+aside {
+  display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.hide-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 667px;
+  width: 117px;
+}
+.show-sidebar {
+  background-color: #fff;
+  height: 667px;
+  width: 259px;
+}
+.show-sidebar div:first-child p {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 25px 0;
+  text-align: center;
+}
+.participants-list,
+.visibility {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.participants-list {
+  height: 180px;
+  overflow-y: scroll;
+  overflow: hidden;
+}
+.visibility {
+  padding-top: 25px;
+}
+.participants-list::-webkit-scrollbar {
+  display: none;
+}
+.person,
+.type span:first-child {
+  display: flex;
+  gap: 10px;
+}
+.person ion-icon {
+  flex-shrink: 0;
+  font-size: 25px;
+}
+.visibility ion-icon {
+  font-size: 22px;
+}
+.check ion-icon {
+  color: #28bb25;
+  font-size: 20px;
+  font-style: bold;
+}
+.check {
+  opacity: 0;
+}
+.participant,
+.visibility li {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+.visibility p:first-child {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+.visibility li p,
+.participants-list li p {
+  font-size: 16px;
+}
+.send-message {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  padding-top: 20px;
+  width: 375px;
+}
+.send-message div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.send-message button {
+  cursor: pointer;
+  height: 26px;
+  margin-right: 18px;
+  width: 26px;
+}
+.send-message ion-icon {
+  height: 26px;
+  width: 26px;
+}
+.message-text {
+  font-size: 18px;
+  height: 25px;
+  overflow: hidden;
+  padding-left: 17px;
+  width: 300px;
+  word-break: break-word;
+}
+.message-text::placeholder {
+  color: black;
+}
+.text-private {
+  color: #505050;
+  font-size: 14px;
+  font-weight: 300;
+  overflow: ellipse;
+  overflow: hidden;
+  padding-left: 17px;
+}
+.participant.selected .show,
+.type.selected .show {
+  opacity: 1;
+}
+.hide {
+  display: none;
+}
+.type,
+.participant {
+  cursor: pointer;
+}
