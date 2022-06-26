@@ -54,3 +54,34 @@ function loadPage() {
 
   promise.then(renderMessages);
 }
+function renderMessages(response) {
+  const messages = response.data;
+  const messageBox = document.querySelector(".messages");
+
+  messageBox.innerHTML = "";
+
+  for (let i = 0; i < messages.length; i++) {
+    let message = messages[i];
+    if (message.type === "status") {
+      messageBox.innerHTML += `
+                  <li class="status" data-identifier="message">
+                      <p><span class="time">(${message.time})</span> <span class="bold">${message.from}</span> ${message.text}</p>
+                  </li>`;
+    } else if (message.type === "message") {
+      messageBox.innerHTML += `
+                  <li class="message" data-identifier="message">
+                      <p><span class="time">(${message.time})</span> <span class="bold">${message.from}</span> para </span> <span class="bold">${message.to}</span>: ${message.text}</p>
+                  </li>`;
+    } else if (
+      message.type === "private_message" &&
+      (message.to === userName || message.from === userName)
+    ) {
+      messageBox.innerHTML += `
+                  <li class="private-message" data-identifier="message">
+                      <p><span class="time">(${message.time})</span> <span class="bold">${message.from}</span> reservadamente para <span class="bold">${message.to}</span>: ${message.text}</p>
+                  </li>`;
+    }
+  }
+  const lastMessage = document.querySelector(".messages li:last-child");
+  lastMessage.scrollIntoView();
+}
