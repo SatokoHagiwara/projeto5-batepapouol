@@ -203,3 +203,10 @@ function chooseMessageVisibility(element, type) {
   visibility = type;
   changeInput();
 }
+function changeInput() {
+  const inputPrivateMessage = document.querySelector(".text-private");
+
+  if (visibility === "message") inputPrivateMessage.innerHTML = "";
+  else
+    inputPrivateMessage.innerHTML = `Enviando para ${participantName} (reservadamente)`;
+}
