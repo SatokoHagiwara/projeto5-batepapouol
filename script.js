@@ -133,3 +133,8 @@ function sendEnter(event, input) {
     else verifyUserName();
   }
 }
+function showParticipants() {
+  const participants = document.querySelector("aside");
+
+  participants.classList.toggle("hide");
+}
