@@ -125,3 +125,11 @@ function sendMessage() {
   promise.then(loadPage);
   promise.catch((error) => window.location.reload());
 }
+function sendEnter(event, input) {
+  let key = event.keyCode;
+
+  if (key === 13) {
+    if (input.classList[0] === "message-text") sendMessage();
+    else verifyUserName();
+  }
+}
