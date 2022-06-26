@@ -31,3 +31,26 @@ function hideLoginScreen(response) {
   loadPage();
   startIntervals();
 }
+function userError(error) {
+  const errorUserName = document.querySelector(".login-screen p");
+
+  errorUserName.classList.remove("hide");
+}
+
+function startIntervals(params) {
+  setInterval(userStatus, 5000);
+  setInterval(loadPage, 3000);
+  setInterval(loadParticipants, 10000);
+}
+function loadPage() {
+  const promise = axios.get(
+    "https://mock-api.driven.com.br/api/v4/uol/messages"
+  );
+
+  if (loadFirstTime === 0) {
+    loadParticipants();
+    loadFirstTime++;
+  }
+
+  promise.then(renderMessages);
+}
