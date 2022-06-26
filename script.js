@@ -138,3 +138,10 @@ function showParticipants() {
 
   participants.classList.toggle("hide");
 }
+function loadParticipants() {
+  const promise = axios.get(
+    "https://mock-api.driven.com.br/api/v4/uol/participants"
+  );
+
+  promise.then(listParticipants);
+}
