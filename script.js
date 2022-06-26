@@ -93,3 +93,35 @@ function userStatus() {
 
   promise.catch((error) => console.log(error.response));
 }
+function sendMessage() {
+  let messageInput = document.querySelector(".message-text");
+  let message = {};
+
+  if (visibility === "message") {
+    message = {
+      from: userName,
+      to: participantName,
+      text: messageInput.value,
+      type: "message",
+    };
+  } else {
+    message = {
+      from: userName,
+      to: participantName,
+      text: messageInput.value,
+      type: "private_message",
+    };
+  }
+
+  messageInput.value = "";
+  resetPrivateInfo();
+  resetVisibility();
+
+  const promise = axios.post(
+    "https://mock-api.driven.com.br/api/v4/uol/messages",
+    message
+  );
+
+  promise.then(loadPage);
+  promise.catch((error) => window.location.reload());
+}
