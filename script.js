@@ -16,3 +16,18 @@ function verifyUserName() {
   promise.then(hideLoginScreen);
   promise.catch(userError);
 }
+function hideLoginScreen(response) {
+  const login = document.querySelector(".login");
+  const screen = document.querySelector(".login-screen");
+
+  login.innerHTML = `
+          <img src="images/spinner.gif" alt="Gif de carregamento">
+          <p style="font-size: 18px">Entrando...</p>
+      `;
+
+  setTimeout(() => {
+    screen.classList.add("hide");
+  }, 3000);
+  loadPage();
+  startIntervals();
+}
