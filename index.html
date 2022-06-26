@@ -20,19 +20,52 @@
       <ion-icon name="people"></ion-icon>
     </header>
     <div class="login-screen">
-        <img src="images/bate-papo-uol-logo.png" alt="Logo Bate-Papo Uol" >
-        <div class="login">
-            <p class="hide">Esse nome de usuário já está em uso. Tente novamente</p>
-            <input type="text" placeholder="Digite seu nome">
-            <button class="btn-login">
-                Entrar
-            </button>
-        </div>
+      <img src="images/bate-papo-uol-logo.png" alt="Logo Bate-Papo Uol" />
+      <div class="login">
+        <p class="hide">Esse nome de usuário já está em uso. Tente novamente</p>
+        <input type="text" placeholder="Digite seu nome" />
+        <button class="btn-login">Entrar</button>
+      </div>
     </div>
     <main>
-        <ul class="messages"></ul>
+      <ul class="messages"></ul>
     </main>
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <aside class="hide">
+        <div class="hide-sidebar"></div>
+        <div class="show-sidebar">
+            <div><p>Escolha um contato <br> para enviar mensagem: </p></div>
+            <ul class="participants-list"></ul>
+            <ul class="visibility">
+                <p>Escolha a visibilidade:</p>
+                <li class="type selected">
+                    <span>
+                        <ion-icon name="lock-open"></ion-icon>
+                        <p>Público</p>
+                    </span>
+                    <span class="check show">
+                        <ion-icon name="checkmark"></ion-icon>
+                    </span>
+                </li>
+                <li class="type">
+                    <span >
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <p>Reservadamente</p>
+                    </span>
+                    <span class="check">
+                        <ion-icon name="checkmark"></ion-icon>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
