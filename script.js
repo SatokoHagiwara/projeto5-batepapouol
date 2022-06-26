@@ -145,3 +145,33 @@ function loadParticipants() {
 
   promise.then(listParticipants);
 }
+function listParticipants(response) {
+  const participants = response.data;
+  const ulParticipants = document.querySelector(".participants-list");
+
+  ulParticipants.innerHTML = `
+            <li class="participant selected" onclick="selectParticipant(this)" data-identifier="participant">
+                <span class="person">
+                    <ion-icon  name="people" ></ion-icon>
+                    <p class="personName">Todos</p>
+                </span>
+                <span class="check show">
+                <ion-icon name="checkmark"></ion-icon>
+                </span>
+            </li>`;
+
+  for (let i = 0; i < participants.length; i++) {
+    const participant = participants[i];
+
+    ulParticipants.innerHTML += `
+                <li class="participant" onclick="selectParticipant(this)" data-identifier="participant">
+                    <span class="person">
+                        <ion-icon  name="people" ></ion-icon>
+                        <p class="personName">${participant.name}</p>
+                        </span>
+                    <span class="check">
+                        <ion-icon name="checkmark"></ion-icon>
+                    </span>
+                </li>`;
+  }
+}
