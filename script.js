@@ -210,3 +210,13 @@ function changeInput() {
   else
     inputPrivateMessage.innerHTML = `Enviando para ${participantName} (reservadamente)`;
 }
+function resetPrivateInfo() {
+  let inputPrivateMessage = document.querySelector(".text-private");
+
+  inputPrivateMessage.innerHTML = "";
+  participantName = "Todos";
+}
+function resetVisibility() {
+  const typeSelected = document.querySelector(".type");
+  chooseMessageVisibility(typeSelected, "message");
+}
