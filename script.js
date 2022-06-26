@@ -189,3 +189,17 @@ function selectParticipant(element) {
 
   changeInput();
 }
+function chooseMessageVisibility(element, type) {
+  const typeSelected = document.querySelector(".type.selected");
+  const checkElement = element.querySelector(".check");
+
+  if (typeSelected !== null) {
+    typeSelected.classList.remove("selected");
+    checkElement.classList.remove("show");
+  }
+  element.classList.toggle("selected");
+  checkElement.classList.add("show");
+
+  visibility = type;
+  changeInput();
+}
