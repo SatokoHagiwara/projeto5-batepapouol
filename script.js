@@ -85,3 +85,11 @@ function renderMessages(response) {
   const lastMessage = document.querySelector(".messages li:last-child");
   lastMessage.scrollIntoView();
 }
+function userStatus() {
+  const promise = axios.post(
+    "https://mock-api.driven.com.br/api/v4/uol/status",
+    { name: userName }
+  );
+
+  promise.catch((error) => console.log(error.response));
+}
