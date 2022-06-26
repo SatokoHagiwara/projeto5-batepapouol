@@ -31,34 +31,47 @@
       <ul class="messages"></ul>
     </main>
     <aside class="hide">
-        <div class="hide-sidebar"></div>
-        <div class="show-sidebar">
-            <div><p>Escolha um contato <br> para enviar mensagem: </p></div>
-            <ul class="participants-list"></ul>
-            <ul class="visibility">
-                <p>Escolha a visibilidade:</p>
-                <li class="type selected">
-                    <span>
-                        <ion-icon name="lock-open"></ion-icon>
-                        <p>Público</p>
-                    </span>
-                    <span class="check show">
-                        <ion-icon name="checkmark"></ion-icon>
-                    </span>
-                </li>
-                <li class="type">
-                    <span >
-                        <ion-icon name="lock-closed"></ion-icon>
-                        <p>Reservadamente</p>
-                    </span>
-                    <span class="check">
-                        <ion-icon name="checkmark"></ion-icon>
-                    </span>
-                </li>
-            </ul>
+      <div class="hide-sidebar"></div>
+      <div class="show-sidebar">
+        <div>
+          <p>
+            Escolha um contato <br />
+            para enviar mensagem:
+          </p>
         </div>
+        <ul class="participants-list"></ul>
+        <ul class="visibility">
+          <p>Escolha a visibilidade:</p>
+          <li class="type selected">
+            <span>
+              <ion-icon name="lock-open"></ion-icon>
+              <p>Público</p>
+            </span>
+            <span class="check show">
+              <ion-icon name="checkmark"></ion-icon>
+            </span>
+          </li>
+          <li class="type">
+            <span>
+              <ion-icon name="lock-closed"></ion-icon>
+              <p>Reservadamente</p>
+            </span>
+            <span class="check">
+              <ion-icon name="checkmark"></ion-icon>
+            </span>
+          </li>
+        </ul>
+      </div>
     </aside>
-
+    <div class="send-message">
+      <div>
+        <textarea class="message-text" placeholder="Escreva aqui..."></textarea>
+        <button>
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </button>
+      </div>
+      <p class="text-private"></p>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
